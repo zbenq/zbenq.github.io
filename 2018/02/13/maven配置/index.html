@@ -5,18 +5,18 @@
   
   <title>maven配置 | zbq&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本地仓库中央仓库">
+  <meta name="description" content="本地仓库&amp;lt;localRepository&amp;gt;/path/to/local/repo&amp;lt;/localRepository&amp;gt; 中央仓库&amp;lt;mirror&amp;gt;       &amp;lt;id&amp;gt;nexus-aliyun&amp;lt;/id&amp;gt;       &amp;lt;mirrorOf&amp;gt;central&amp;lt;/mirrorOf&amp;gt;       &amp;lt;name&amp;gt;Nexus">
 <meta name="keywords" content="maven">
 <meta property="og:type" content="article">
 <meta property="og:title" content="maven配置">
 <meta property="og:url" content="https://zbenq.github.io/2018/02/13/maven配置/index.html">
 <meta property="og:site_name" content="zbq&#39;s blogs">
-<meta property="og:description" content="本地仓库中央仓库">
+<meta property="og:description" content="本地仓库&amp;lt;localRepository&amp;gt;/path/to/local/repo&amp;lt;/localRepository&amp;gt; 中央仓库&amp;lt;mirror&amp;gt;       &amp;lt;id&amp;gt;nexus-aliyun&amp;lt;/id&amp;gt;       &amp;lt;mirrorOf&amp;gt;central&amp;lt;/mirrorOf&amp;gt;       &amp;lt;name&amp;gt;Nexus">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-13T06:13:26.000Z">
+<meta property="og:updated_time" content="2018-02-13T08:54:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="maven配置">
-<meta name="twitter:description" content="本地仓库中央仓库">
+<meta name="twitter:description" content="本地仓库&amp;lt;localRepository&amp;gt;/path/to/local/repo&amp;lt;/localRepository&amp;gt; 中央仓库&amp;lt;mirror&amp;gt;       &amp;lt;id&amp;gt;nexus-aliyun&amp;lt;/id&amp;gt;       &amp;lt;mirrorOf&amp;gt;central&amp;lt;/mirrorOf&amp;gt;       &amp;lt;name&amp;gt;Nexus">
   
   
     <link rel="icon" href="/favicon.png">
@@ -87,11 +87,18 @@
       
         <!-- Table of Contents -->
         
-        <h2 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h2><h2 id="中央仓库"><a href="#中央仓库" class="headerlink" title="中央仓库"></a>中央仓库</h2>
+        <h2 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h2><pre><code>&lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;
+</code></pre><h2 id="中央仓库"><a href="#中央仓库" class="headerlink" title="中央仓库"></a>中央仓库</h2><pre><code>&lt;mirror&gt;
+      &lt;id&gt;nexus-aliyun&lt;/id&gt;
+      &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+      &lt;name&gt;Nexus aliyun&lt;/name&gt;
+      &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;
+&lt;/mirror&gt;
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zbenq.github.io/2018/02/13/maven配置/" data-id="cjdl953280001s5fean4muo8c" class="article-share-link">分享</a>
+      <a data-url="https://zbenq.github.io/2018/02/13/maven配置/" data-id="cjdlevg4u0000x9fejus0g8nj" class="article-share-link">分享</a>
       
       
       
