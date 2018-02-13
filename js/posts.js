@@ -1,1 +1,1 @@
-[{"title":"Hello World","date":"2018.02.04","uri":"2018/02/04/hello-world/","excerpt":""},{"title":"hello,zbq","date":"2018.02.04","uri":"2018/02/04/hello-zbq/","excerpt":""}]
+[{"title":"Hello World","date":"2018.02.04","uri":"2018/02/04/hello-world/","excerpt":""}]
