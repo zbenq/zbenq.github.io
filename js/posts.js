@@ -1,1 +1,1 @@
-[{"title":"maven配置","date":"2018.02.13","uri":"2018/02/13/maven配置/","excerpt":""},{"title":"Hello World","date":"2018.02.04","uri":"2018/02/04/hello-world/","excerpt":""}]
+[{"title":"maven配置","date":"2018.02.13","uri":"2018/02/13/maven配置/","excerpt":""}]
