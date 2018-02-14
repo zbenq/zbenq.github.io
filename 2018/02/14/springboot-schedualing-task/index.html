@@ -5,18 +5,18 @@
   
   <title>springboot-schedualing task | zbq&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="定时任务 spring boot + mybatis + postgresql  pom.xml&amp;lt;parent&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;     &amp;lt;v">
+  <meta name="description" content="定时任务 spring boot + mybatis + postgresql源码下载  pom.xml&amp;lt;parent&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;     &amp;">
 <meta name="keywords" content="Spring Boot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springboot-schedualing task">
 <meta property="og:url" content="https://zbenq.github.io/2018/02/14/springboot-schedualing-task/index.html">
 <meta property="og:site_name" content="zbq&#39;s blogs">
-<meta property="og:description" content="定时任务 spring boot + mybatis + postgresql  pom.xml&amp;lt;parent&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;     &amp;lt;v">
+<meta property="og:description" content="定时任务 spring boot + mybatis + postgresql源码下载  pom.xml&amp;lt;parent&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;     &amp;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-14T12:44:08.000Z">
+<meta property="og:updated_time" content="2018-02-14T12:57:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot-schedualing task">
-<meta name="twitter:description" content="定时任务 spring boot + mybatis + postgresql  pom.xml&amp;lt;parent&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;     &amp;lt;v">
+<meta name="twitter:description" content="定时任务 spring boot + mybatis + postgresql源码下载  pom.xml&amp;lt;parent&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;     &amp;">
   
   
     <link rel="icon" href="/favicon.png">
@@ -87,12 +87,12 @@
       
         <!-- Table of Contents -->
         
-        <p>定时任务 spring boot + mybatis + postgresql </p>
+        <p>定时任务 spring boot + mybatis + postgresql<br><a href="https://pan.baidu.com/s/1jKaiFjS" target="_blank" rel="noopener">源码下载</a> </p>
 <h2 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h2><pre><code>&lt;parent&gt;
     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
     &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
     &lt;version&gt;1.5.10.RELEASE&lt;/version&gt;
-    &lt;relativePath /&gt; &lt;!-- lookup parent from repository --&gt;
+    &lt;relativePath /&gt;
 &lt;/parent&gt;
 &lt;dependencies&gt;
     &lt;dependency&gt;
@@ -105,6 +105,7 @@
         &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
         &lt;version&gt;1.3.0&lt;/version&gt;
     &lt;/dependency&gt;
+    &lt;!-- postgresql --&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;org.postgresql&lt;/groupId&gt;
         &lt;artifactId&gt;postgresql&lt;/artifactId&gt;
@@ -135,8 +136,13 @@ public class SchedualingTask {
         log.info(&quot;用户数量：&quot;+testMapper.userCount());
     }
 }
-</code></pre><h2 id="加入MyBatis"><a href="#加入MyBatis" class="headerlink" title="加入MyBatis"></a>加入MyBatis</h2><h3 id="数据库连接配置"><a href="#数据库连接配置" class="headerlink" title="数据库连接配置"></a>数据库连接配置</h3><p>application.properties<br>    spring.datasource.url=jdbc:postgresql://127.0.0.1:5432/test<br>    spring.datasource.username=postgres<br>    spring.datasource.password=xxxxxx<br>    spring.datasource.driverClassName=org.postgresql.Driver<br>    mybatis.mapper-locations=classpath<em>:mapper/</em>Mapper.xml</p>
-<h3 id="MyBatisConfig"><a href="#MyBatisConfig" class="headerlink" title="MyBatisConfig"></a>MyBatisConfig</h3><pre><code>package com.example;
+</code></pre><h2 id="加入MyBatis"><a href="#加入MyBatis" class="headerlink" title="加入MyBatis"></a>加入MyBatis</h2><h3 id="数据库连接配置"><a href="#数据库连接配置" class="headerlink" title="数据库连接配置"></a>数据库连接配置</h3><p>application.properties</p>
+<pre><code>spring.datasource.url=jdbc:postgresql://127.0.0.1:5432/test
+spring.datasource.username=postgres
+spring.datasource.password=xxxxxx
+spring.datasource.driverClassName=org.postgresql.Driver
+mybatis.mapper-locations=classpath*:mapper/*Mapper.xml
+</code></pre><h3 id="MyBatisConfig"><a href="#MyBatisConfig" class="headerlink" title="MyBatisConfig"></a>MyBatisConfig</h3><pre><code>package com.example;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 @Configuration
@@ -161,7 +167,7 @@ public interface TestMapper {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zbenq.github.io/2018/02/14/springboot-schedualing-task/" data-id="cjdn2ksy10000v6fe6at99x5d" class="article-share-link">分享</a>
+      <a data-url="https://zbenq.github.io/2018/02/14/springboot-schedualing-task/" data-id="cjdn31cxs0001xife9twbhi7l" class="article-share-link">分享</a>
       
       
       
